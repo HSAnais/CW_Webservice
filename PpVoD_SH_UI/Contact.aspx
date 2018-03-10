@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TopUp.aspx.cs" Inherits="PpVoD_SH_UI.TopUp" Async="true" Title="Top up your credits" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="PpVoD_SH_UI.Contact" Title="Contact" %>
 
 <style type="text/css">
     div.container {
@@ -53,10 +53,8 @@
 <body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
 <form id="form1" runat="server">
     <div class="container">
-        <h2>Top up your credits</h2>
-            <asp:Literal ID="lblAmount" runat="server">Amount</asp:Literal>
-            <asp:TextBox ID="tbxAmount" runat="server"></asp:TextBox>
-            <asp:Button ID="BtnAddCredits" runat="server" OnClick="BtnAddCredits_Click" Text="Add to account"/>
-    </div>
-</form>
+        <p>Top up your credits</p>
+        </div>
+    </form>
 </body>
+</html>

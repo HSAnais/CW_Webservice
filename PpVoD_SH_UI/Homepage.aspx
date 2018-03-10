@@ -70,8 +70,8 @@
 <header style="background-color: #73ab84;font-family:'Open Sans';">
     <ul>
         <li><a href="Homepage.aspx">Home</a></li>
-        <li><a href="news.asp">Browse</a></li>
-        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="Browse.aspx">Browse</a></li>
+        <li><a href="Contact.aspx">Contact</a></li>
         <!-- if logged in, change the label text to: "welcome [name]" with link to account and "credit: [status]" with link to topup -->
         <li style="float:right;"><asp:Literal ID="lblRegister" runat="server" ><a href="">Register/Login</a></asp:Literal></li>
         <li style="float:right;"><asp:Literal ID="lblCredit" runat="server" Visible="False"><a href="TopUp.aspx">Credits: </a></asp:Literal></li>
