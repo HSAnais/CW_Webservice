@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Homepage.aspx" />
+    <Content Include="TopUp.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Models\VideoElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TopUp.aspx.cs">
+      <DependentUpon>TopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TopUp.aspx.designer.cs">
+      <DependentUpon>TopUp.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

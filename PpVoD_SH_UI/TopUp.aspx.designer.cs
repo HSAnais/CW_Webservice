@@ -10,7 +10,7 @@
 namespace PpVoD_SH_UI {
     
     
-    public partial class Homepage {
+    public partial class TopUp {
         
         /// <summary>
         /// lblRegister control.
@@ -40,48 +40,30 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// tbxVideoNumber control.
+        /// lblAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxVideoNumber;
+        protected global::System.Web.UI.WebControls.Literal lblAmount;
         
         /// <summary>
-        /// BtunGetVideobyNumber control.
+        /// tbxAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtunGetVideobyNumber;
+        protected global::System.Web.UI.WebControls.TextBox tbxAmount;
         
         /// <summary>
-        /// ltlResult control.
+        /// BtnAddCredits control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlResult;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// ltlAllResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlAllResults;
+        protected global::System.Web.UI.WebControls.Button BtnAddCredits;
     }
 }

@@ -30,5 +30,15 @@ namespace PpVoD_SH_UI
                 ltlAllResults.Text = ltlAllResults.Text + "Name: " + v.Title + "  ID: " + v.ID + "  Price: " + v.Price + "  Genre: " + v.Genre + "<br/>";
             }
         }
+
+        /* if loggedin
+         *  { lblRegister.Text = "Welcome, " + user.name;
+         *  lblCredit.Visible = True;
+         *  lblCredit.Text = "Credits: " + user.credits;
+         */
+
+        /* display carousel trending
+         * display carousel each genre
+         */
     }
 }
