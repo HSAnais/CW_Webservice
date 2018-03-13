@@ -13,5 +13,10 @@ namespace PpVoD_SH_UI
         {
 
         }
+
+        protected void finishVideoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

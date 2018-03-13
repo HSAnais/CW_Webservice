@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="PpVoD_SH_UI.Contact" Title="Contact" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="PpVoD_SH_UI.Contact" Title="Contact" Async="true" %>
 
 <style type="text/css">
     div.container {
@@ -53,8 +53,8 @@
 <body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
 <form id="form1" runat="server">
     <div class="container">
-        <p>Top up your credits</p>
-        </div>
+        <p>This project belongs to Stefania Anais Hristea, as part of the Distributed Interactive Application Development course at University of Greenwich.</p>
+        <p><b>March 2018</b></p>
+    </div>
     </form>
 </body>
-</html>
