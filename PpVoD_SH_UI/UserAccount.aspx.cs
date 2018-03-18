@@ -13,5 +13,10 @@ namespace PpVoD_SH_UI
         {
 
         }
+
+        protected void BtnAddCredits_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TopUp.aspx");
+        }
     }
 }
