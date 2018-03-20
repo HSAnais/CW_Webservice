@@ -11,7 +11,7 @@ namespace PpVoD_SH.Controllers
 {
     public class UserAccountController : ApiController
     {
-        [Route("api/Users/Login?Email=[inputUsername]&Password=[inputPassword]"), AcceptVerbs("GET")]
+        [Route("api/UserAccount/Login?Email=[inputUsername]&Password=[inputPassword]"), AcceptVerbs("GET")]
         public bool UserLogin(string inputUsername, string inputPassword)
         {
             using (TestDBDataContext tdb = new TestDBDataContext())

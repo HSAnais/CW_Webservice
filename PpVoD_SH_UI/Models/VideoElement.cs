@@ -75,7 +75,7 @@ namespace PpVoD_SH_UI.Models
             }
         }
 
-        public async Task<VideoElement> GetVideoByGenreAsync(string Genre)
+        public async Task<List<VideoElement>> GetVideoByGenreAsync(string Genre)
         {
             // Create request
             var request = HttpWebRequest.Create(string.Format(@"{0}videoElement/getbygenre?inputGenre=" + Genre, url));
@@ -92,7 +92,7 @@ namespace PpVoD_SH_UI.Models
 
                     // Get response stream & deserialize list of certificates using Json.NET
                     using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                        return JsonConvert.DeserializeObject<VideoElement>(reader.ReadToEnd());
+                        return JsonConvert.DeserializeObject<List<VideoElement>>(reader.ReadToEnd());
                 }
             }
             catch (Exception ex)
