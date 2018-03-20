@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="PpVoD_SH_UI.Browse" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="PpVoD_SH_UI.Browse" Async="true" %>
 
 <style type="text/css">
     div.container {

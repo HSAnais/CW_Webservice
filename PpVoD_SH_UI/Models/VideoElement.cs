@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;
+using System.Drawing;
 
 namespace PpVoD_SH_UI.Models
 {
@@ -13,14 +14,14 @@ namespace PpVoD_SH_UI.Models
     {
         private string url = "http://localhost:58223/api/";
 
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string Title { get; set; }
         public string Genre { get; set; }
         public int Price { get; set; }
         public int Rating { get; set; }
         public string Plot { get; set; }
         public int Year { get; set; }
-        // + thumbnail picture
+        public Image Poster { get; set; }
 
         public async Task<List<VideoElement>> GetVideosAsync()
         {

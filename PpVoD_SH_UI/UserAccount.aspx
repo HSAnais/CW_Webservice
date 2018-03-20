@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserAccount.aspx.cs" Inherits="PpVoD_SH_UI.UserAccount" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserAccount.aspx.cs" Inherits="PpVoD_SH_UI.UserAccount" Async="true"%>
 
 <style type="text/css">
     div.container {
