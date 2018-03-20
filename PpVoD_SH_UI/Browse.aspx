@@ -56,25 +56,25 @@
         <h2 style="text-align:center">Choose a movie to watch</h2>
         <asp:Literal ID="lblAction" runat="server">Action</asp:Literal>
         <asp:ListView ID="viewAction" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblAdventue" runat="server">Adventure</asp:Literal>
         <asp:ListView ID="viewAdventure" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblComedy" runat="server">Comedy</asp:Literal>
         <asp:ListView ID="viewComedy" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblDocumentary" runat="server">Documentary</asp:Literal>
         <asp:ListView ID="viewDocumentary" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblDrama" runat="server">Drama</asp:Literal>
         <asp:ListView ID="viewDrama" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblHorror" runat="server">Horror</asp:Literal>
         <asp:ListView ID="viewHorror" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblRomantic" runat="server">Romantic</asp:Literal>
         <asp:ListView ID="viewRomantic" runat="server"></asp:ListView>
-        </br>
+        <br/>
         <asp:Literal ID="lblThriller" runat="server">Thriller</asp:Literal>
         <asp:ListView ID="viewThriller" runat="server"></asp:ListView>
     </div>

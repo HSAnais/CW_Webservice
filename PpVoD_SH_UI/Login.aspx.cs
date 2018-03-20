@@ -16,7 +16,7 @@ namespace PpVoD_SH_UI
 
         }
 
-        protected async void BtnRegister_Click(object sender, EventArgs e)
+        protected void BtnRegister_Click(object sender, EventArgs e)
         {
             string newName = tbxName.Text;
             string newEmail = tbxEmail.Text;
@@ -45,7 +45,7 @@ namespace PpVoD_SH_UI
             //}
         }
 
-        protected async void BtnLogin_Click(object sender, EventArgs e)
+        protected void BtnLogin_Click(object sender, EventArgs e)
         {
             string inputUsername = tbxUsername.Text;
             string inputPassword = tbxPass.Text;

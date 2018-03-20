@@ -24,9 +24,19 @@ namespace PpVoD_SH.Controllers
         }
 
         [Route ("api/videoElement/getbyid")]
-        public IHttpActionResult GetVideo(int inputID)
+        public IHttpActionResult GetVideoById(int inputID)
         {
             VideoElement video = videos.FirstOrDefault((v) => v.ID == inputID);
+
+            if (video == null)
+                return NotFound();
+            return Ok(video);
+        }
+
+        [Route ("api/videoElement/getbygenre")]
+        public IHttpActionResult GetVideoByGenre(string inputGenre)
+        {
+            VideoElement video = videos.FirstOrDefault((v) => v.Genre == inputGenre);
 
             if (video == null)
                 return NotFound();

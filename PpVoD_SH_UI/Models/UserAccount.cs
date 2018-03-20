@@ -7,6 +7,8 @@ namespace PpVoD_SH_UI.Models
 {
     public class UserAccount
     {
+        private string url = "http://localhost:58223/api/";
+
         public int ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
