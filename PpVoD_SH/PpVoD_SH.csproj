@@ -99,22 +99,22 @@
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Models\VideoElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="App_Data\Videos.designer.cs">
+    <Compile Include="App_Data\TestDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Videos.dbml</DependentUpon>
+      <DependentUpon>TestDB.dbml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="App_Data\Videos.dbml">
+    <Content Include="App_Data\TestDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Videos.designer.cs</LastGenOutput>
+      <LastGenOutput>TestDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\Videos.dbml.layout">
-      <DependentUpon>Videos.dbml</DependentUpon>
-    </Content>
+    <None Include="App_Data\TestDB.dbml.layout">
+      <DependentUpon>TestDB.dbml</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

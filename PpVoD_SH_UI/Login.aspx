@@ -88,13 +88,13 @@
             <h2>Register a new account</h2>
             <asp:Literal ID="lblName" runat="server">Name: </asp:Literal>
             <asp:TextBox ID="tbxName" runat="server"></asp:TextBox>
-            </br>
+            <br/>
             <asp:Literal ID="lblEmail" runat="server">Email: </asp:Literal>
             <asp:TextBox ID="tbxEmail" runat="server"></asp:TextBox>
-            </br>
+            <br/>
             <asp:Literal ID="lblPassword" runat="server">Password: </asp:Literal>
             <asp:TextBox ID="tbxPassword" runat="server"></asp:TextBox>
-            </br>
+            <br/>
             <asp:Button ID="BtnRegister" runat="server" OnClick="BtnRegister_Click" CssClass="button" Text="Register"/>
         </div>
 
@@ -105,11 +105,13 @@
             <h2>Login into your account</h2>
             <asp:Literal ID="lblUsername" runat="server">Email: </asp:Literal>
             <asp:TextBox ID="tbxUsername" runat="server"></asp:TextBox>
-            </br>
+            <br/>
             <asp:Literal ID="lblPass" runat="server">Password: </asp:Literal>
             <asp:TextBox ID="tbxPass" runat="server"></asp:TextBox>
-            </br>
+            <br/>
             <asp:Button ID="BtnLogin" runat="server" OnClick="BtnLogin_Click" CssClass="button" Text="Login"/>
+            <br />
+            <asp:Literal ID="lblErrors" runat="server" Visible="false"></asp:Literal>
         </div>
     </div>
 </form>

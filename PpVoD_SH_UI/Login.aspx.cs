@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace PpVoD_SH_UI
 {
@@ -24,41 +25,40 @@ namespace PpVoD_SH_UI
             //validation
 
             //Create a new User object.
-            UserAccount newUser = new UserAccount{
-                //ID++,
-                Name=newName,
-                Email=newEmail,
-                Password=newPassword,
-                LastLogin=DateTime.Now
-            };
-            // Add the new object to the Orders collection.
-            db.Users.InsertOnSubmit(newUser);
-            // Submit the change to the database. 
-            try
-            {
-                db.SubmitChanges();
-            }
-            catch (Exception e)
-            {
-                db.SubmitChanges();
-            }
+            //UserAccount newUser{
+            //    "Name": newName,
+            //    "Email": newEmail,
+            //    "Password": newPassword,
+            //    "LastLogin": DateTime.Now
+            //};
+
+            //// Add the new object to the Orders collection.
+            //PpVoD_Db_SH.Users.InsertOnSubmit(newUser);
+            //// Submit the change to the database. 
+            //try
+            //{
+            //    PpVoD_Db_SH.SubmitChanges();
+            //}
+            //catch (Exception ex)
+            //{
+            //    PpVoD_Db_SH.SubmitChanges();
+            //}
         }
 
-        protected bool BtnLogin_Click(object sender, EventArgs e)
+        protected async void BtnLogin_Click(object sender, EventArgs e)
         {
             string inputUsername = tbxUsername.Text;
             string inputPassword = tbxPass.Text;
-
-            using (TestDBDataContext tdb = new TestDBDataContext())
-            {
-                if (tdb.Users.Where(x => x.Email == inputUsername).Count() == 1)
-                    if (tdb.Users.Where(x => x.Email == inputUsername && x.Password == inputPassword).Count() == 1)
-                        return true;
-                    else
-                        return false;
-                else
-                    return false;
-            }
+            Session.Add("loggedUsername", inputUsername);
+            //retrieve amount of credits for this account, to be used in session
+            //{
+            //    Response.Redirect("UserAccount.aspx");
+            //    Session.Add("currentUser", inputUsername);
+            //}
+            //{
+            //    lblErrors.Text = "Email and password do not match";
+            //    lblErrors.Visible = true;
+            //}
         }
     }
 
