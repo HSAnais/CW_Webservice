@@ -64,8 +64,6 @@ namespace PpVoD_SH_UI.Models
                     if (response.StatusCode != HttpStatusCode.OK)
                         Console.WriteLine(String.Format("Error ...", response.StatusCode));
 
-                    JsonSerializer serializer = new JsonSerializer();
-
                     // Get response stream & deserialize list of certificates using Json.NET
                     using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                         return JsonConvert.DeserializeObject<List<VideoElement>>(reader.ReadToEnd());
@@ -80,12 +78,14 @@ namespace PpVoD_SH_UI.Models
         public async Task<List<VideoElement>> GetVideoByGenreAsync(string Genre)
         {
             // Create request
-            var request = HttpWebRequest.Create(string.Format(@"{0}videoElement/getbygenre?genre=" + Genre, url));
+            var request = HttpWebRequest.Create(string.Format(@"{0}videoElement/getbygenre?genre=" + Genre,url));
             request.ContentType = "application/json"; // tell the API we want Json returned
             request.Method = "GET";
+
             try
             {
                 // Get response wrom Web API
+
                 using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
                 {
                     // Check status

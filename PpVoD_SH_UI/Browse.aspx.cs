@@ -18,27 +18,38 @@ namespace PpVoD_SH_UI
         {
             //retrieve videos by genre
             List<Models.VideoElement> vAction = await new Models.VideoElement().GetVideoByGenreAsync("Action");
-            //List<Models.VideoElement> vAdventure = await new Models.VideoElement().GetVideoByGenreAsync("Adventure");
-            //List<Models.VideoElement> vScifi = await new Models.VideoElement().GetVideoByGenreAsync("Sci-fi");
-            //List<Models.VideoElement> vDocumentary = await new Models.VideoElement().GetVideoByGenreAsync("Documentary");
-            //List<Models.VideoElement> vDrama = await new Models.VideoElement().GetVideoByGenreAsync("Drama");
-            //List<Models.VideoElement> vHorror = await new Models.VideoElement().GetVideoByGenreAsync("Horror");
-            //List<Models.VideoElement> vFantasy = await new Models.VideoElement().GetVideoByGenreAsync("Fantasy");
-            //List<Models.VideoElement> vAnimation = await new Models.VideoElement().GetVideoByGenreAsync("Animation");
+            List<Models.VideoElement> vAdventure = await new Models.VideoElement().GetVideoByGenreAsync("Adventure");
+            List<Models.VideoElement> vAnimation = await new Models.VideoElement().GetVideoByGenreAsync("Animation");
+            List<Models.VideoElement> vDocumentary = await new Models.VideoElement().GetVideoByGenreAsync("Documentary");
+            List<Models.VideoElement> vDrama = await new Models.VideoElement().GetVideoByGenreAsync("Drama");
+            List<Models.VideoElement> vFantasy = await new Models.VideoElement().GetVideoByGenreAsync("Fantasy");
+            List<Models.VideoElement> vHorror = await new Models.VideoElement().GetVideoByGenreAsync("Horror");
+            List<Models.VideoElement> vScifi = await new Models.VideoElement().GetVideoByGenreAsync("Sci-fi");
 
-            DataList1.DataSource = vAction;
-            DataList1.DataBind();
+            //place them in datalists
+            dlAction.DataSource = vAction;
+            dlAction.DataBind();
 
-            foreach (Models.VideoElement v in vAction)
-            {
-                lblAction.Text = lblAction.Text + "Name: " + v.Title + "  Genre: " + v.Genre + "  Price: " + v.Price + "  Plot: " + v.Plot + "<br/>";
-            }
+            dlAdventure.DataSource = vAdventure;
+            dlAdventure.DataBind();
 
-            //place them in views
-            //FormView1.DataSource = vAdventure;
-            //FormView1.DataBind();
-            //viewAction.DataSource = vAction;
-            //viewAction.DataBind();
+            dlAnimation.DataSource = vAnimation;
+            dlAnimation.DataBind();
+
+            dlDocumentary.DataSource = vDocumentary;
+            dlDocumentary.DataBind();
+
+            dlDrama.DataSource = vDrama;
+            dlDrama.DataBind();
+
+            dlFantasy.DataSource = vFantasy;
+            dlFantasy.DataBind();
+
+            dlHorror.DataSource = vHorror;
+            dlHorror.DataBind();
+
+            dlScifi.DataSource = vScifi;
+            dlScifi.DataBind();
         }
     }
 }

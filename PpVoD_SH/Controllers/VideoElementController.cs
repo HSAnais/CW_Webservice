@@ -19,17 +19,17 @@ namespace PpVoD_SH.Controllers
         }
 
         [Route ("api/videoElement/getbygenre")]
-        public IEnumerable<Video> GetAllGenreVideos(string inputGenre)
+        public IHttpActionResult GetVideoByGenre(string Genre)
         {
-            var query = from v in db.Videos
-                         where v.Genre == inputGenre
-                         select v;
+            var query = (from v in db.Videos
+                         where v.Genre == Genre
+                         select v).ToList();
 
-            return query;
+            Console.WriteLine(query[0].Title);
 
-            //return from v in db.Videos
-            //       where v.Genre == inputGenre
-            //       select v;
+            if (query == null)
+                return NotFound();
+            return Ok(query);
         }
 
         [Route ("api/videoElement/getbyid")]

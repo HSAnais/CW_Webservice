@@ -2,12 +2,20 @@
 
 <style type="text/css">
     div.container {
-        margin-left: 25%;
+        margin-left: 40%;
         margin-right: 25%;   
         width: 1400px; 
         margin:0 auto; 
         margin-top:70px;
         text-align: left;
+    }
+    .datalist{
+        margin-left: 25%;
+        margin-right: 25%;
+        text-align:center;
+        height: 350px;
+        width: 900px;
+        overflow:auto;
     }
     ul{
         list-style-type: none;
@@ -52,42 +60,209 @@
 
 <body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
 <form id="form1" runat="server">
+
     <div class="container">
         <h2 style="text-align:center">Choose a movie to watch</h2>
-<%--        <div id="grdCharges" runat="server" style="width: 875px; overflow: auto; height: 160px;">--%>
-        <asp:Literal ID="lblAction" runat="server">Action</asp:Literal>
-        <%--<asp:ListView ID="viewAction" runat="server"></asp:ListView>
-        </div>--%>
-         <asp:DataList ID="DataList1"  runat="server" RepeatColumns="4" RepeatDirection="Horizontal">
-         <HeaderTemplate>
-            <font color="red"><b>Showing all videos</b></font>     
-        </HeaderTemplate>
+    </div>        
+     
+    <%-- Action DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblAction" runat="server"><h3>Action</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlAction"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
             <itemtemplate>
-                <font color="Fuchsia"><b>|<%#Eval("Title")%></b></font>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year")%>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
             </itemtemplate>
         </asp:DataList>
+        </div>
+    
+    <%-- Adventure DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblAdventure" runat="server"><h3>Adventure</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlAdventure"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
 
-        <%--<asp:FormView ID="FormView1" runat="server" EditRowStyle-VerticalAlign="Top" EditRowStyle-Width="70px" EditRowStyle-Wrap="True" Height="150px" HorizontalAlign="Left"></asp:FormView>
-        <asp:Literal ID="lblAdventue" runat="server">Adventure</asp:Literal>
-        <asp:ListView ID="viewAdventure" runat="server"></asp:ListView>
-        <br/>
-        <asp:Literal ID="lblComedy" runat="server">Comedy</asp:Literal>
-        <asp:ListView ID="viewComedy" runat="server"></asp:ListView>
-        <br/>
-        <asp:Literal ID="lblDocumentary" runat="server">Documentary</asp:Literal>
-        <asp:ListView ID="viewDocumentary" runat="server"></asp:ListView>
-        <br/>
-        <asp:Literal ID="lblDrama" runat="server">Drama</asp:Literal>
-        <asp:ListView ID="viewDrama" runat="server"></asp:ListView>
-        <br/>
-        <asp:Literal ID="lblHorror" runat="server">Horror</asp:Literal>
-        <asp:ListView ID="viewHorror" runat="server"></asp:ListView>
-        <br/>
-        <asp:Literal ID="lblRomantic" runat="server">Romantic</asp:Literal>
-        <asp:ListView ID="viewRomantic" runat="server"></asp:ListView>
-        <br/>
-        <asp:Literal ID="lblThriller" runat="server">Thriller</asp:Literal>
-        <asp:ListView ID="viewThriller" runat="server"></asp:ListView>--%>
-    </div>
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
+
+    <%-- Animation DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblAnimation" runat="server"><h3>Animation</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlAnimation"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
+
+    <%-- Documentary DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblDocumentary" runat="server"><h3>Documentary</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlDocumentary"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
+
+    <%-- Drama DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblDrama" runat="server"><h3>Drama</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlDrama"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
+
+    <%-- Fantasy DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblFantasy" runat="server"><h3>Fantasy</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlFantasy"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
+
+    <%-- Horror DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblHorror" runat="server"><h3>Horror</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlHorror"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
+
+    <%-- Sci-fi DataList--%>
+    <div style="margin-left: 26%"><asp:Literal ID="lblScifi" runat="server"><h3>Sci-fi</h3></asp:Literal></div>
+    <div class="datalist">
+        <asp:DataList ID="dlScifi"  runat="server"
+            RepeatColumns="0" 
+            CellSpacing="20" 
+            RepeatDirection="Horizontal">
+
+            <itemtemplate>
+<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
+                <br />
+                <b><%#Eval("Title")%></b>
+                <br />
+                Year: <%#Eval("Year") %>
+                <br />
+                <b>Price: </b><%#Eval("Price") %>
+                <br />
+                <b>Rating: </b><%#Eval("Rating") %>
+                <br />
+                Description:<%#Eval("Plot") %>
+            </itemtemplate>
+        </asp:DataList>
+        </div>
 </form>
 </body>
