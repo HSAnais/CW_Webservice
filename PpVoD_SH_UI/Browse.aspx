@@ -1,4 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="PpVoD_SH_UI.Browse" Async="true" %>
+﻿<%@ Register TagPrefix="cc1" Namespace="BunnyBear" Assembly="msgBox" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="PpVoD_SH_UI.Browse" Async="true" %>
+
+<%@ Register Assembly="msgBox" Namespace="BunnyBear" TagPrefix="cc1" %>
 
 <style type="text/css">
     div.container {
@@ -16,6 +19,9 @@
         height: 350px;
         width: 900px;
         overflow:auto;
+    }
+    .selectItem{
+
     }
     ul{
         list-style-type: none;
@@ -71,21 +77,24 @@
         <asp:DataList ID="dlAction"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal" 
+            OnItemDataBound="DL_ItemDataBound"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year")%>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -96,21 +105,21 @@
         <asp:DataList ID="dlAdventure"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -121,21 +130,21 @@
         <asp:DataList ID="dlAnimation"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -146,21 +155,21 @@
         <asp:DataList ID="dlDocumentary"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -171,21 +180,21 @@
         <asp:DataList ID="dlDrama"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -196,21 +205,21 @@
         <asp:DataList ID="dlFantasy"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -221,21 +230,21 @@
         <asp:DataList ID="dlHorror"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -246,23 +255,25 @@
         <asp:DataList ID="dlScifi"  runat="server"
             RepeatColumns="0" 
             CellSpacing="20" 
-            RepeatDirection="Horizontal">
+            RepeatDirection="Horizontal"
+            OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
-<%--            <a href="Watching.aspx?ID=<%#:Item.VideoID%>">--%>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
-                <b><%#Eval("Title")%></b>
+                <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
                 <br />
-                Year: <%#Eval("Year") %>
+                <b>Year: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Year") %>'></asp:Literal>
                 <br />
-                <b>Price: </b><%#Eval("Price") %>
+                <b>Price: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Price") %>'></asp:Literal>
                 <br />
-                <b>Rating: </b><%#Eval("Rating") %>
+                <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
-                Description:<%#Eval("Plot") %>
+                <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                <asp:Literal ID="Literal6" runat="server" Text='<%#Eval("ID") %>' Visible="false"></asp:Literal>
             </itemtemplate>
         </asp:DataList>
         </div>
+<cc1:msgBox id="MsgBox1" runat="server"/>
 </form>
 </body>

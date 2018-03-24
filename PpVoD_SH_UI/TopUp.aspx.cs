@@ -17,6 +17,12 @@ namespace PpVoD_SH_UI
         protected void BtnAddCredits_Click(object sender, EventArgs e)
         {
             //tbxAmount.Text;
+            //update UserAccount table
+
+            //confirmation message with ok button
+            Response.Write("<script>alert('Credits added successfully')</script>");
+            
+            //redirect to Browse
         }
 
         /* if loggedin

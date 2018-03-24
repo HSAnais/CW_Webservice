@@ -77,7 +77,7 @@
 
 <body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
 <form id="form1" runat="server">
-    <asp:Button ID="BtnFinish" runat="server" Text="Finish viewing" CssClass="rightBtn" OnClick="finishVideoBtn_Click" />
+    <asp:Button ID="BtnFinish" runat="server" Text="Finish viewing" CssClass="rightBtn" OnClick="FinishVideoBtn_Click" />
     <br />
     <div class="container">        
         <img alt="Current video playing" src="Content/Jupiter_landscape.jpg" class="video" />
