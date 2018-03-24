@@ -14,7 +14,7 @@ namespace PpVoD_SH_UI
 
         }
 
-        protected async void BtnAddCredits_Click(object sender, EventArgs e)
+        protected void BtnAddCredits_Click(object sender, EventArgs e)
         {
             //tbxAmount.Text;
         }

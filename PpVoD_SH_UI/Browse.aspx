@@ -54,9 +54,20 @@
 <form id="form1" runat="server">
     <div class="container">
         <h2 style="text-align:center">Choose a movie to watch</h2>
+<%--        <div id="grdCharges" runat="server" style="width: 875px; overflow: auto; height: 160px;">--%>
         <asp:Literal ID="lblAction" runat="server">Action</asp:Literal>
-        <asp:ListView ID="viewAction" runat="server"></asp:ListView>
-        <br/>
+        <%--<asp:ListView ID="viewAction" runat="server"></asp:ListView>
+        </div>--%>
+         <asp:DataList ID="DataList1"  runat="server" RepeatColumns="4" RepeatDirection="Horizontal">
+         <HeaderTemplate>
+            <font color="red"><b>Showing all videos</b></font>     
+        </HeaderTemplate>
+            <itemtemplate>
+                <font color="Fuchsia"><b>|<%#Eval("Title")%></b></font>
+            </itemtemplate>
+        </asp:DataList>
+
+        <%--<asp:FormView ID="FormView1" runat="server" EditRowStyle-VerticalAlign="Top" EditRowStyle-Width="70px" EditRowStyle-Wrap="True" Height="150px" HorizontalAlign="Left"></asp:FormView>
         <asp:Literal ID="lblAdventue" runat="server">Adventure</asp:Literal>
         <asp:ListView ID="viewAdventure" runat="server"></asp:ListView>
         <br/>
@@ -76,7 +87,7 @@
         <asp:ListView ID="viewRomantic" runat="server"></asp:ListView>
         <br/>
         <asp:Literal ID="lblThriller" runat="server">Thriller</asp:Literal>
-        <asp:ListView ID="viewThriller" runat="server"></asp:ListView>
+        <asp:ListView ID="viewThriller" runat="server"></asp:ListView>--%>
     </div>
 </form>
 </body>

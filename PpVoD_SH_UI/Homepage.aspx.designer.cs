@@ -49,13 +49,13 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.TextBox tbxVideoNumber;
         
         /// <summary>
-        /// BtunGetVideobyNumber control.
+        /// BtnGetVideobyNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtunGetVideobyNumber;
+        protected global::System.Web.UI.WebControls.Button BtnGetVideobyNumber;
         
         /// <summary>
         /// ltlResult control.

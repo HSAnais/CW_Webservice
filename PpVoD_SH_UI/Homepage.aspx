@@ -92,7 +92,7 @@
             <p class="description"> Enter the video number you'd like to check.</p>
 
             <asp:Textbox ID="tbxVideoNumber" runat="server" ToolTip="Video Number"></asp:TextBox>
-            <asp:Button ID="BtunGetVideobyNumber" runat="server" Text="Submit" OnClick="BtnGetVideobyNumber_Click" />
+            <asp:Button ID="BtnGetVideobyNumber" runat="server" Text="Submit" OnClick="BtnGetVideobyNumber_Click" />
             <br /><asp:Literal ID="ltlResult" runat="server"></asp:Literal>
         </div>
 
@@ -101,7 +101,7 @@
             <h3 style="text-align:center;"> Show All Videos </h3>
             <p class="description">Press the button below to get all the videos shown here.</p>
 
-            <asp:Button ID="Button1" runat="server" Text="Get All Videos" class="btn btn-primary btn-lg" OnClick="btnAllVideos_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Get All Videos" class="btn btn-primary btn-lg" OnClick="BtnAllVideos_Click" />
             <br /><asp:Literal ID="ltlAllResults" runat="server"></asp:Literal>            
         </div>
     </div>
