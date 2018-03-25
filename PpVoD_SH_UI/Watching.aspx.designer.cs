@@ -13,6 +13,15 @@ namespace PpVoD_SH_UI {
     public partial class Watching {
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// lblRegister control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace PpVoD_SH_UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblCredit;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// BtnFinish control.
@@ -67,13 +67,13 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblTitle;
         
         /// <summary>
-        /// lblGenreYear control.
+        /// lblYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblGenreYear;
+        protected global::System.Web.UI.WebControls.Literal lblYear;
         
         /// <summary>
         /// lblPlot control.
@@ -83,5 +83,14 @@ namespace PpVoD_SH_UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblPlot;
+        
+        /// <summary>
+        /// MsgBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BunnyBear.msgBox MsgBox1;
     }
 }

@@ -49,7 +49,8 @@ namespace PpVoD_SH_UI
         {
             string inputUsername = tbxUsername.Text;
             string inputPassword = tbxPass.Text;
-            Session.Add("loggedUsername", inputUsername);
+            Session.Add("uName", inputUsername);
+
             //retrieve amount of credits for this account, to be used in session
             //{
             //    Response.Redirect("UserAccount.aspx");

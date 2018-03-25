@@ -11,7 +11,32 @@ namespace PpVoD_SH_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ////temporary hardcoded data to test navbar
+            Session["uName"] = "testUser";
+            Session["uCredits"] = 10;
 
+            //navbar logged in
+            if (Session["uName"] != null)//logged in
+            {
+                lblRegister.Text = "Welcome back, " + (string)Session["uName"];
+                int currentcredits = Convert.ToInt32(Session["uCredits"]);
+                lblCredit.Text = "Credits: " + currentcredits.ToString();
+                lblCredit.Visible = true;
+            }
+        }
+
+        protected void NavbarClick(object sender, EventArgs e)
+        {
+            if (Session["uName"] != null)//logged in
+            {
+                Response.Redirect("UserAccount.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
         }
 
         protected async void BtnGetVideobyNumber_Click(object sender, EventArgs e)
@@ -32,14 +57,7 @@ namespace PpVoD_SH_UI
             }
         }
 
-        /* if loggedin
-         *  { lblRegister.Text = "Welcome, " + user.name;
-         *  lblCredit.Visible = True;
-         *  lblCredit.Text = "Credits: " + user.credits;
-         */
-
         /* display carousel trending
-         * display carousel each genre
          */
     }
 }

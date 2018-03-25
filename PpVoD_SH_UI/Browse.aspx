@@ -1,8 +1,6 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="BunnyBear" Assembly="msgBox" %>
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="PpVoD_SH_UI.Browse" Async="true" %>
 
-<%@ Register Assembly="msgBox" Namespace="BunnyBear" TagPrefix="cc1" %>
-
 <style type="text/css">
     div.container {
         margin-left: 40%;
@@ -15,13 +13,16 @@
     .datalist{
         margin-left: 25%;
         margin-right: 25%;
-        text-align:center;
         height: 350px;
         width: 900px;
         overflow:auto;
     }
     .selectItem{
-
+        text-align:left;
+        color: #73ab84;
+    }
+    .selectItem:hover{
+        background-color: #087f8c;
     }
     ul{
         list-style-type: none;
@@ -48,25 +49,20 @@
     a:hover{
         background-color: #950952;
     }
-    .active{
-        background-color: #087f8c;
-    }
 </style>
 
+<form id="form1" runat="server">
 <header style="background-color: #73ab84;font-family:'Open Sans';">
     <ul>
         <li><a href="Homepage.aspx">Home</a></li>
         <li><a href="Browse.aspx">Browse</a></li>
         <li><a href="Contact.aspx">Contact</a></li>
-        <!-- if logged in, change the label text to: "welcome [name]" with link to account and "credit: [status]" with link to topup -->
-        <li style="float:right;"><asp:Literal ID="lblRegister" runat="server" ><a href="UserAccount.aspx">Welcome</a></asp:Literal></li>
-        <li style="float:right;"><asp:Literal ID="lblCredit" runat="server"><a href="TopUp.aspx">Credits: </a></asp:Literal></li>
+        <li style="float:right;"><asp:LinkButton runat="server" OnClick="NavbarClick"><asp:Literal ID="lblRegister" runat="server" Text="Register/Login" ></asp:Literal></asp:LinkButton></li>
+        <li style="float:right; margin-right:7%;"><a href="TopUp.aspx"><asp:Literal ID="lblCredit" runat="server" Text="Credits: xxx" Visible="false" ></asp:Literal></a></li>
     </ul> 
 </header>
 
 <body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
-<form id="form1" runat="server">
-
     <div class="container">
         <h2 style="text-align:center">Choose a movie to watch</h2>
     </div>        
@@ -106,9 +102,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -120,6 +118,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -131,9 +130,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -145,6 +146,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -156,9 +158,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+               <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -170,6 +174,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -181,9 +186,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -195,6 +202,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -206,9 +214,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -220,6 +230,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -231,9 +242,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -245,6 +258,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
@@ -256,9 +270,11 @@
             RepeatColumns="0" 
             CellSpacing="20" 
             RepeatDirection="Horizontal"
+            OnItemDataBound="DL_ItemDataBound"
             OnItemCommand="DL_ItemCommand">
 
             <itemtemplate>
+                <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Poster") %>'/>
                 <br />
                 <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
@@ -270,10 +286,10 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
-                <asp:Literal ID="Literal6" runat="server" Text='<%#Eval("ID") %>' Visible="false"></asp:Literal>
+                </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>
         </div>
-<cc1:msgBox id="MsgBox1" runat="server"/>
-</form>
 </body>
+<cc1:msgBox ID="MsgBox1" runat="server"></cc1:msgBox>
+</form>

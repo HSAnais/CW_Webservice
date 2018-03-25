@@ -11,12 +11,22 @@ namespace PpVoD_SH_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //navbar
+            lblRegister.Text = "Welcome back, " + (string)Session["uName"];
+            int currentcredits = Convert.ToInt32(Session["uCredits"]);
+            lblCredit.Text = "Credits: " + currentcredits.ToString();
         }
 
         protected void BtnAddCredits_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TopUp.aspx");
+            Response.Redirect("TopUp.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+        }
+
+        protected void NavbarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("UserAccount.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();            
         }
     }
 }

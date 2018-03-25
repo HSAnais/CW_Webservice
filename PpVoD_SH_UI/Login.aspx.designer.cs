@@ -13,24 +13,6 @@ namespace PpVoD_SH_UI {
     public partial class Login {
         
         /// <summary>
-        /// lblRegister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblRegister;
-        
-        /// <summary>
-        /// lblCredit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblCredit;
-        
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

@@ -67,23 +67,22 @@
         background-color: #087f8c;
     }
 </style>
+
+<form id="form1" runat="server">
 <header style="background-color: #73ab84;font-family:'Open Sans';">
     <ul>
         <li><a href="Homepage.aspx">Home</a></li>
         <li><a href="Browse.aspx">Browse</a></li>
         <li><a href="Contact.aspx">Contact</a></li>
-        <!-- if logged in, change the label text to: "welcome [name]" with link to account and "credit: [status]" with link to topup -->
-        <li style="float:right;"><asp:Literal ID="lblRegister" runat="server" ><a href="">Register/Login</a></asp:Literal></li>
-        <li style="float:right;"><asp:Literal ID="lblCredit" runat="server" Visible="False"><a href="TopUp.aspx">Credits: </a></asp:Literal></li>
+        <li style="float:right;"><asp:LinkButton runat="server" OnClick="NavbarClick"><asp:Literal ID="lblRegister" runat="server" Text="Register/Login" ></asp:Literal></asp:LinkButton></li>
+        <li style="float:right; margin-right:7%;"><a href="TopUp.aspx"><asp:Literal ID="lblCredit" runat="server" Text="Credits: xxx" Visible="false" ></asp:Literal></a></li>
     </ul> 
 </header>
 
-<body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
-<form id="form1" runat="server">
-    
+<body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">   
     <div class="container">    
         <!--Headline-->    
-        <h1 class="title" style="font-size:45;">Welcome to Pay-per-view on demand App</h1>
+        <h1 class="title" style="font-size:x-large">Welcome to Pay-per-view on demand App</h1>
         <p class="title">Register for the service, top up your account and choose from the library the video you want to watch!</p>
     
         <!--Get video by id-->
@@ -101,9 +100,9 @@
             <h3 style="text-align:center;"> Show All Videos </h3>
             <p class="description">Press the button below to get all the videos shown here.</p>
 
-            <asp:Button ID="Button1" runat="server" Text="Get All Videos" class="btn btn-primary btn-lg" OnClick="BtnAllVideos_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Get All Videos" OnClick="BtnAllVideos_Click" />
             <br /><asp:Literal ID="ltlAllResults" runat="server"></asp:Literal>            
         </div>
     </div>
-</form>
 </body>
+</form>
