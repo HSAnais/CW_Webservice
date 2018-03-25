@@ -13,6 +13,15 @@ namespace PpVoD_SH_UI {
     public partial class Browse {
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// lblRegister control.
         /// </summary>
         /// <remarks>
@@ -31,15 +40,6 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblCredit;
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// lblAction control.
         /// </summary>
         /// <remarks>
@@ -49,49 +49,49 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblAction;
         
         /// <summary>
-        /// viewAction control.
+        /// dlAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewAction;
+        protected global::System.Web.UI.WebControls.DataList dlAction;
         
         /// <summary>
-        /// lblAdventue control.
+        /// lblAdventure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblAdventue;
+        protected global::System.Web.UI.WebControls.Literal lblAdventure;
         
         /// <summary>
-        /// viewAdventure control.
+        /// dlAdventure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewAdventure;
+        protected global::System.Web.UI.WebControls.DataList dlAdventure;
         
         /// <summary>
-        /// lblComedy control.
+        /// lblAnimation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblComedy;
+        protected global::System.Web.UI.WebControls.Literal lblAnimation;
         
         /// <summary>
-        /// viewComedy control.
+        /// dlAnimation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewComedy;
+        protected global::System.Web.UI.WebControls.DataList dlAnimation;
         
         /// <summary>
         /// lblDocumentary control.
@@ -103,13 +103,13 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblDocumentary;
         
         /// <summary>
-        /// viewDocumentary control.
+        /// dlDocumentary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewDocumentary;
+        protected global::System.Web.UI.WebControls.DataList dlDocumentary;
         
         /// <summary>
         /// lblDrama control.
@@ -121,13 +121,31 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblDrama;
         
         /// <summary>
-        /// viewDrama control.
+        /// dlDrama control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewDrama;
+        protected global::System.Web.UI.WebControls.DataList dlDrama;
+        
+        /// <summary>
+        /// lblFantasy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblFantasy;
+        
+        /// <summary>
+        /// dlFantasy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dlFantasy;
         
         /// <summary>
         /// lblHorror control.
@@ -139,48 +157,39 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblHorror;
         
         /// <summary>
-        /// viewHorror control.
+        /// dlHorror control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewHorror;
+        protected global::System.Web.UI.WebControls.DataList dlHorror;
         
         /// <summary>
-        /// lblRomantic control.
+        /// lblScifi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblRomantic;
+        protected global::System.Web.UI.WebControls.Literal lblScifi;
         
         /// <summary>
-        /// viewRomantic control.
+        /// dlScifi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewRomantic;
+        protected global::System.Web.UI.WebControls.DataList dlScifi;
         
         /// <summary>
-        /// lblThriller control.
+        /// MsgBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblThriller;
-        
-        /// <summary>
-        /// viewThriller control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewThriller;
+        protected global::BunnyBear.msgBox MsgBox1;
     }
 }

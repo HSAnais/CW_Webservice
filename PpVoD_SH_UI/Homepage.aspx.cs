@@ -11,17 +11,43 @@ namespace PpVoD_SH_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ////temporary hardcoded data to test navbar
+            Session["uName"] = "testUser";
+            Session["uCredits"] = 10;
 
+            //navbar logged in
+            if (Session["uName"] != null)//logged in
+            {
+                lblRegister.Text = "Welcome back, " + (string)Session["uName"];
+                int currentcredits = Convert.ToInt32(Session["uCredits"]);
+                lblCredit.Text = "Credits: " + currentcredits.ToString();
+                lblCredit.Visible = true;
+            }
+        }
+
+        protected void NavbarClick(object sender, EventArgs e)
+        {
+            if (Session["uName"] != null)//logged in
+            {
+                Response.Redirect("UserAccount.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
         }
 
         protected async void BtnGetVideobyNumber_Click(object sender, EventArgs e)
         {
-            Models.VideoElement vResult = await new Models.VideoElement().GetVideoByIDAsync(tbxVideoNumber.Text);
+            int inputID = Convert.ToInt32(tbxVideoNumber.Text);
+            List<Models.VideoElement> vResult = await new Models.VideoElement().GetVideoByIDAsync(inputID);
 
-            ltlResult.Text = "Name: " + vResult.Title + "  ID: " + vResult.ID + "  Price: " + vResult.Price + "  Genre: " + vResult.Genre;
+            ltlResult.Text = "Name: " + vResult[0].Title + "  ID: " + vResult[0].ID + "  Price: " + vResult[0].Price + "  Genre: " + vResult[0].Genre;
         }
 
-        protected async void btnAllVideos_Click(object sender, EventArgs e)
+        protected async void BtnAllVideos_Click(object sender, EventArgs e)
         {
             List<Models.VideoElement> vList = await new Models.VideoElement().GetVideosAsync();
 
@@ -31,14 +57,7 @@ namespace PpVoD_SH_UI
             }
         }
 
-        /* if loggedin
-         *  { lblRegister.Text = "Welcome, " + user.name;
-         *  lblCredit.Visible = True;
-         *  lblCredit.Text = "Credits: " + user.credits;
-         */
-
         /* display carousel trending
-         * display carousel each genre
          */
     }
 }

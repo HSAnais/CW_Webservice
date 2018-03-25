@@ -13,6 +13,15 @@ namespace PpVoD_SH_UI {
     public partial class Homepage {
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// lblRegister control.
         /// </summary>
         /// <remarks>
@@ -31,15 +40,6 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblCredit;
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// tbxVideoNumber control.
         /// </summary>
         /// <remarks>
@@ -49,13 +49,13 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.TextBox tbxVideoNumber;
         
         /// <summary>
-        /// BtunGetVideobyNumber control.
+        /// BtnGetVideobyNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtunGetVideobyNumber;
+        protected global::System.Web.UI.WebControls.Button BtnGetVideobyNumber;
         
         /// <summary>
         /// ltlResult control.
