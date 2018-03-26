@@ -90,6 +90,7 @@
                 <b>Rating: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
                 <br />
                 <b>Description: </b><asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Plot") %>'></asp:Literal>
+                <asp:Literal ID="Literal6" runat="server" Text='<%#Eval("Id") %>' Visible="false" ></asp:Literal>
                 </asp:LinkButton>
             </itemtemplate>
         </asp:DataList>

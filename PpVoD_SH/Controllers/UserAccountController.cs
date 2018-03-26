@@ -11,19 +11,33 @@ namespace PpVoD_SH.Controllers
 {
     public class UserAccountController : ApiController
     {
-        //[Route("api/UserAccount/Login?Email=[inputUsername]&Password=[inputPassword]"), AcceptVerbs("GET")]
-        //public bool UserLogin(string inputUsername, string inputPassword)
-        //{
-        //    using (TestDBDataContext tdb = new TestDBDataContext())
-        //    {
-        //        if (tdb.Users.Where(x => x.Email == inputUsername).Count() == 1)
-        //            if (tdb.Users.Where(x => x.Email == inputUsername && x.Password == inputPassword).Count() == 1)
-        //                return true;
-        //            else
-        //                return false;
-        //        else
-        //            return false;
-        //    }
-        //}
+        TestDBDataContext db = new TestDBDataContext();
+
+        [Route("api/userAccount/getlogin")]
+        public IHttpActionResult GetLogin(string email, string password)
+        {
+            using (TestDBDataContext tdb = new TestDBDataContext())
+            {
+                if (tdb.Users.Where(x => x.Email == email).Count() == 1)
+                    if (tdb.Users.Where(x => x.Email == email && x.Password == password).Count() == 1)
+                        return Ok(true);
+
+                return NotFound();
+            }
+        }
+        
+        [Route("api/userAccount/getrenthistory")]
+        public IHttpActionResult GetRentHistory(string email)
+        {
+            string query = (from u in db.Users
+                            where u.Email == email
+                            select u.RentHistory).First();
+
+            //return query;
+
+            if (query == null)
+                return NotFound();
+            return Ok(query);
+        }
     }
 }

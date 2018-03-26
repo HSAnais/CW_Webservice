@@ -47,9 +47,6 @@
     a:hover{
         background-color: #950952;
     }
-    .active{
-        background-color: #087f8c;
-    }
     .verticalLine {
         border-left: thick solid #73ab84;
         display: inline-block;
@@ -87,10 +84,10 @@
             <asp:TextBox ID="tbxName" runat="server"></asp:TextBox>
             <br/>
             <asp:Literal ID="lblEmail" runat="server">Email: </asp:Literal>
-            <asp:TextBox ID="tbxEmail" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbxEmail" TextMode="Email" runat="server"></asp:TextBox>
             <br/>
             <asp:Literal ID="lblPassword" runat="server">Password: </asp:Literal>
-            <asp:TextBox ID="tbxPassword" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbxPassword" TextMode="Password" runat="server"></asp:TextBox>
             <br/>
             <asp:Button ID="BtnRegister" runat="server" OnClick="BtnRegister_Click" CssClass="button" Text="Register"/>
         </div>
@@ -101,10 +98,10 @@
         <div class="right">
             <h2>Login into your account</h2>
             <asp:Literal ID="lblUsername" runat="server">Email: </asp:Literal>
-            <asp:TextBox ID="tbxUsername" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbxUsername" TextMode="Email" runat="server"></asp:TextBox>
             <br/>
             <asp:Literal ID="lblPass" runat="server">Password: </asp:Literal>
-            <asp:TextBox ID="tbxPass" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbxPass" TextMode="Password" runat="server"></asp:TextBox>
             <br/>
             <asp:Button ID="BtnLogin" runat="server" OnClick="BtnLogin_Click" CssClass="button" Text="Login"/>
             <br />

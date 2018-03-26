@@ -20,17 +20,21 @@ namespace PpVoD_SH_UI
                 lblCredit.Visible = true;
             }
 
+            //put video details in labels
             lblRating.Text = "<span style='font-weight:bold;'>Rating: </span>" + (string)Session["wRating"];
             lblTitle.Text = "<span style='font-weight:bold; font-size:20px;'>Title: " + (string)Session["wTitle"] + "</span>";
             lblYear.Text = "<span style='font-weight:bold;'>Year: </span>" + (string)Session["wYear"];
             lblPlot.Text = (string)Session["wPlot"];
 
-            //add +1 in Videos table for number of views
+            //!!!add +1 in Videos table for number of views
 
             //add the videoid in rentHistory
+            List<int> updatedHistory = (List<int>)Session["uHistory"];
+            updatedHistory.Add(Convert.ToInt32(Session["wId"]));
+            Session["uHistory"] = updatedHistory;
 
             //finish viewing message
-                if (Request.Form["hid_f"] == "1")   //if user clicks "OK" to confirm 
+            if (Request.Form["hid_f"] == "1")   //if user clicks "OK" to confirm 
                 {
                     Request.Form["hid_f"].Replace("1", "0");
                     //Reset the hidden field back to original value "0"

@@ -67,6 +67,24 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Button BtnAddCredits;
         
         /// <summary>
+        /// BtnEditAccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEditAccount;
+        
+        /// <summary>
+        /// BtnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnLogout;
+        
+        /// <summary>
         /// lblHistory control.
         /// </summary>
         /// <remarks>
@@ -76,12 +94,21 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Literal lblHistory;
         
         /// <summary>
-        /// viewRentHistory control.
+        /// dlHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView viewRentHistory;
+        protected global::System.Web.UI.WebControls.DataList dlHistory;
+        
+        /// <summary>
+        /// MsgBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BunnyBear.msgBox MsgBox1;
     }
 }

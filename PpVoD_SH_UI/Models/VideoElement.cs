@@ -26,7 +26,7 @@ namespace PpVoD_SH_UI.Models
         public async Task<List<VideoElement>> GetVideosAsync()
         {
             // Create request
-            var request = HttpWebRequest.Create(string.Format(@"{0}videoElement", url));
+            var request = HttpWebRequest.Create(string.Format(@"{0}videoElement/getall", url));
             request.ContentType = "application/json"; // tell the API we want Json returned
             request.Method = "GET";
             try

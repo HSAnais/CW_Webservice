@@ -11,8 +11,8 @@ namespace PpVoD_SH_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ////temporary hardcoded data to test navbar
-            Session["uName"] = "testUser";
+            ////temporary hardcoded data to test navbar, renthistory
+            Session["uName"] = "anais@anais.anais";
             Session["uCredits"] = 10;
 
             //navbar logged in

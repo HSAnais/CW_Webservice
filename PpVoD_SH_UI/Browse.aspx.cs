@@ -132,6 +132,7 @@ namespace PpVoD_SH_UI
                         Session["wPrice"] = ((Literal)e.Item.FindControl("Literal3")).Text;
                         Session["wRating"] = ((Literal)e.Item.FindControl("Literal4")).Text;
                         Session["wPlot"] = ((Literal)e.Item.FindControl("Literal5")).Text;
+                        Session["wId"] = ((Literal)e.Item.FindControl("Literal6")).Text;
 
                         //deduct amount of credits
                         Session["uCredits"] = currentCredits - moviePrice;

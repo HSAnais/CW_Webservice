@@ -12,6 +12,7 @@ namespace PpVoD_SH.Controllers
     {
         TestDBDataContext db = new TestDBDataContext();
 
+        [Route ("api/videoElement/getall")]
         public IEnumerable<Video> GetAllVideos()
         {
             return from v in db.Videos
@@ -24,8 +25,6 @@ namespace PpVoD_SH.Controllers
             var query = (from v in db.Videos
                          where v.Genre == Genre
                          select v).ToList();
-
-            Console.WriteLine(query[0].Title);
 
             if (query == null)
                 return NotFound();
