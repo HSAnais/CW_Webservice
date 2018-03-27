@@ -17,37 +17,39 @@ namespace PpVoD_SH_UI.Models
         public int ID { get; set; }
         public string Title { get; set; }
         public string Genre { get; set; }
-        public int Price { get; set; }
-        public int Rating { get; set; }
         public string Plot { get; set; }
+        public int Price { get; set; }
+        public int Rating { get; set; }        
         public int Year { get; set; }
         public Image Poster { get; set; }
+        public int Viewings { get; set; }
 
-        public async Task<List<VideoElement>> GetVideosAsync()
-        {
-            // Create request
-            var request = HttpWebRequest.Create(string.Format(@"{0}videoElement/getall", url));
-            request.ContentType = "application/json"; // tell the API we want Json returned
-            request.Method = "GET";
-            try
-            {
-                // Get response from Web API
-                using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
-                {
-                    // Check status
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        Console.WriteLine(String.Format("Error ...", response.StatusCode));
 
-                    // Get response stream & deserialize list of certificates using Json.NET
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                        return JsonConvert.DeserializeObject<List<VideoElement>>(reader.ReadToEnd());
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
+        //public async Task<List<VideoElement>> GetVideosAsync()
+        //{
+        //    // Create request
+        //    var request = HttpWebRequest.Create(string.Format(@"{0}videoElement/getall", url));
+        //    request.ContentType = "application/json"; // tell the API we want Json returned
+        //    request.Method = "GET";
+        //    try
+        //    {
+        //        // Get response from Web API
+        //        using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
+        //        {
+        //            // Check status
+        //            if (response.StatusCode != HttpStatusCode.OK)
+        //                Console.WriteLine(String.Format("Error ...", response.StatusCode));
+
+        //            // Get response stream & deserialize list of certificates using Json.NET
+        //            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+        //                return JsonConvert.DeserializeObject<List<VideoElement>>(reader.ReadToEnd());
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
 
         public async Task<List<VideoElement>> GetVideoByIDAsync(int id)
         {

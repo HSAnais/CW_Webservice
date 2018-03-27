@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using System.Drawing;
+
 namespace PpVoD_SH_UI.Models
 {
     public class UserAccount
@@ -18,9 +19,10 @@ namespace PpVoD_SH_UI.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime LastLogin { get; set; }
-        public string Creditcard { get; set; }
-        public int Credits { get; set; }
         public string RentHistory { get; set; }
+        public int Credits { get; set; }
+        public string Creditcard { get; set; }        
+        
 
         public async Task<bool> GetLoginAsync(string email, string password)
         {

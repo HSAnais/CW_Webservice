@@ -56,13 +56,18 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="VideoElementTest.cs" />
+    <Compile Include="UserAccountTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PpVoD_SH\PpVoD_SH.csproj">
       <Project>{F4105F50-FB12-4187-ABC8-D939C739B028}</Project>
       <Name>PpVoD_SH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PpVoD_SH_UI\PpVoD_SH_UI.csproj">
+      <Project>{d9a3684f-85c8-4baa-81da-693aa9c5b307}</Project>
+      <Name>PpVoD_SH_UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

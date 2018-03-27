@@ -54,6 +54,8 @@
 <body style="background-color:#283044; color:#73ab84; font-family:'Open Sans';">
     <div class="container">
         <p>This project belongs to Stefania Anais Hristea, as part of the Distributed Interactive Application Development course at University of Greenwich.</p>
+        <br />
+        <p><b>Credits: </b>Ning Liao, Liang Yang, 3 Sep 2004, "A Simple ASP.NET Server Control: Message Box & Confirmation Box", Available at: <a style="display:inline; text-align:left; padding:0; color:#73ab84; " href="https://www.codeproject.com/Articles/8173/A-Simple-ASP-NET-Server-Control-Message-Box-Confir">CodeProject</a> </p>
         <p><b>March 2018</b></p>
     </div>
 </body>    

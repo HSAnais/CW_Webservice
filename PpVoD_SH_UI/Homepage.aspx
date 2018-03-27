@@ -85,7 +85,7 @@
         <h1 class="title" style="font-size:x-large">Welcome to Pay-per-view on demand App</h1>
         <p class="title">Register for the service, top up your account and choose from the library the video you want to watch!</p>
     
-        <!--Get video by id-->
+        <%--<!--Get video by id-->
         <div class="left">
             <h3 style="text-align:center;"> Show Videos by ID</h3>
             <p class="description"> Enter the video number you'd like to check.</p>
@@ -102,7 +102,7 @@
 
             <asp:Button ID="Button1" runat="server" Text="Get All Videos" OnClick="BtnAllVideos_Click" />
             <br /><asp:Literal ID="ltlAllResults" runat="server"></asp:Literal>            
-        </div>
+        </div>--%>
     </div>
 </body>
 </form>
