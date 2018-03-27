@@ -94,6 +94,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Content\Jupiter_landscape.jpg" />
+    <Content Include="Images\poster.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

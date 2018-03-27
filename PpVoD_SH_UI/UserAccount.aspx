@@ -81,8 +81,8 @@
         <br/>
         <asp:Button ID="BtnAddCredits" runat="server" OnClick="BtnAddCredits_Click" Text="Top up" ForeColor="#283044" CssClass="AddCreditsBtn" />
         <br />
-        <asp:Button ID="BtnEditAccount" runat="server" OnClick="BtnEditAccount_Click" Text="Edit your information" ForeColor="#283044" CssClass="AddCreditsBtn" />
-        <br />
+        <%--<asp:Button ID="BtnEditAccount" runat="server" OnClick="BtnEditAccount_Click" Text="Edit your information" ForeColor="#283044" CssClass="AddCreditsBtn" />
+        <br />--%>
         <asp:Button ID="BtnLogout" runat="server" OnClick="BtnLogout_Click" Text="Log out" ForeColor="#283044" CssClass="AddCreditsBtn" />
     </div>
 

@@ -76,6 +76,33 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.TextBox tbxPassword;
         
         /// <summary>
+        /// lblCreditCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblCreditCard;
+        
+        /// <summary>
+        /// tbxCreditCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxCreditCard;
+        
+        /// <summary>
+        /// lblRegisterErrors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblRegisterErrors;
+        
+        /// <summary>
         /// BtnRegister control.
         /// </summary>
         /// <remarks>
@@ -130,12 +157,12 @@ namespace PpVoD_SH_UI {
         protected global::System.Web.UI.WebControls.Button BtnLogin;
         
         /// <summary>
-        /// lblErrors control.
+        /// lblLoginErrors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblErrors;
+        protected global::System.Web.UI.WebControls.Literal lblLoginErrors;
     }
 }

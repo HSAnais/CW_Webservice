@@ -89,6 +89,11 @@
             <asp:Literal ID="lblPassword" runat="server">Password: </asp:Literal>
             <asp:TextBox ID="tbxPassword" TextMode="Password" runat="server"></asp:TextBox>
             <br/>
+            <asp:Literal ID="lblCreditCard" runat="server">Credit card: </asp:Literal>
+            <asp:TextBox ID="tbxCreditCard" runat="server"></asp:TextBox>
+            <br/>
+            <asp:Literal ID="lblRegisterErrors" runat="server" Visible="false"></asp:Literal>
+            <br />
             <asp:Button ID="BtnRegister" runat="server" OnClick="BtnRegister_Click" CssClass="button" Text="Register"/>
         </div>
 
@@ -105,7 +110,7 @@
             <br/>
             <asp:Button ID="BtnLogin" runat="server" OnClick="BtnLogin_Click" CssClass="button" Text="Login"/>
             <br />
-            <asp:Literal ID="lblErrors" runat="server" Visible="false"></asp:Literal>
+            <asp:Literal ID="lblLoginErrors" runat="server" Visible="false"></asp:Literal>
         </div>
     </div>
 </form>

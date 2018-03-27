@@ -13,7 +13,7 @@ namespace PpVoD_SH.Controllers
     {
         TestDBDataContext db = new TestDBDataContext();
 
-        [Route("api/userAccount/getlogin")]
+        [Route("api/userAccount/getlogin"), AcceptVerbs("GET")]
         public IHttpActionResult GetLogin(string email, string password)
         {
             using (TestDBDataContext tdb = new TestDBDataContext())
@@ -33,7 +33,36 @@ namespace PpVoD_SH.Controllers
                             where u.Email == email
                             select u.RentHistory).First();
 
-            //return query;
+            if (query == null)
+                return NotFound();
+            return Ok(query);
+        }
+
+        [Route("api/userAccount/")]
+        public IHttpActionResult Create(User newUser)
+        {
+            // Add the new object to the table
+            db.Users.InsertOnSubmit(newUser);
+
+            // Submit the change to the database.
+            try
+            {
+                db.SubmitChanges();
+                return Ok(true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return NotFound();
+            }
+        }
+
+        [Route("api/userAccount/getbyemail")]
+        public IHttpActionResult GetUserByEmail(string Email)
+        {
+            var query = (from u in db.Users
+                         where u.Email == Email
+                         select u).ToList();
 
             if (query == null)
                 return NotFound();

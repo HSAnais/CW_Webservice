@@ -23,12 +23,10 @@ namespace PpVoD_SH_UI
 
             //retrieve History
             //retrieve array from users table
-            string currentUser = (string)Session["uName"];
+            string currentUser = (string)Session["uEmail"];
             string uRentHistory = await new Models.UserAccount().GetRentHistoryAsync(currentUser);
             List<int> historyIDs = new List<int>(Array.ConvertAll(uRentHistory.Split(','), int.Parse));
 
-            //temporary hardcoded data to test renthistory
-            //int[] historyIDs = { 2, 5, 7, 8, 10 };
             Session["uHistory"] = historyIDs;            
 
             //retrieve the videos for display
@@ -111,12 +109,12 @@ namespace PpVoD_SH_UI
             Context.ApplicationInstance.CompleteRequest();
         }
 
-        protected void BtnEditAccount_Click(object sender, EventArgs e)
-        {
-            //implement edit functionality
-            //Response.Redirect("UserAccount.aspx", false);
-            //Context.ApplicationInstance.CompleteRequest();
-        }
+        //protected void BtnEditAccount_Click(object sender, EventArgs e)
+        //{
+        //    //implement edit functionality
+        //    //Response.Redirect("UserAccount.aspx", false);
+        //    //Context.ApplicationInstance.CompleteRequest();
+        //}
 
         protected void BtnLogout_Click(object sender, EventArgs e)
         {

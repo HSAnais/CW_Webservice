@@ -21,58 +21,65 @@ namespace PpVoD_SH_UI
             string newName = tbxName.Text;
             string newEmail = tbxEmail.Text;
             string newPassword = tbxPassword.Text;
+            string newCard = tbxCreditCard.Text;
 
             //input validation
+            if (newName == null || newEmail == null || newPassword == null || newCard == null)
+            {
+                lblRegisterErrors.Text = "Please complete all fields to register an account";
+                lblRegisterErrors.Visible = true;
+            }
+            else
+            {
+                try
+                {
+                    //push new user to db
+                    //UserAccount newUser = [];
 
-            //Create a new User object.
-            //UserAccount newUser{
-            //    "Name": newName,
-            //    "Email": newEmail,
-            //    "Password": newPassword,
-            //    "LastLogin": DateTime.Now
-            //};
+                    //add to session user details
+                    Session.Add("uName", newName);
+                    Session["uCredits"] = 0;
 
-            //// Add the new object to the users collection.
-            //PpVoD_Db_SH.Users.InsertOnSubmit(newUser);
-            //// Submit the change to the database. 
-            //try
-            //{
-            //    PpVoD_Db_SH.SubmitChanges();
-            //}
-            //catch (Exception ex)
-            //{
-            //    PpVoD_Db_SH.SubmitChanges();
-            //}
-
-            //Redirect to useraccount
+                    //Redirect to useraccount
+                    Response.Redirect("UserAccount.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+                catch(Exception ex)
+                {
+                    lblRegisterErrors.Text = ex.Message;
+                    lblRegisterErrors.Visible = true;
+                }
+            }
         }
 
         protected async void BtnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                //atm it returns "invalid url format" error
+                //check if there is an account in table
                 bool okLogged = await new Models.UserAccount().GetLoginAsync(tbxUsername.Text, tbxPass.Text);
 
                 if (okLogged == true)
                 {
-                    Session.Add("uName", tbxUsername.Text);
                     //retrieve info from db of the user
-                    //put the info in session
-
-                    Response.Redirect("Browse.aspx", false);
-                    Context.ApplicationInstance.CompleteRequest();
-
-                    //temporary hardcoded data to test login
-                    Session["uCredits"] = 25;
-
-                    //!!!Session.add: credits, name, renthistory
+                    List<Models.UserAccount> uLogged = await new Models.UserAccount().GetUserByEmailAsync(tbxUsername.Text);
                     
+                    //put the info in session
+                    Session.Add("uEmail", tbxUsername.Text);
+                    Session.Add("uName", uLogged[0].Name);
+                    Session.Add("uHistory", uLogged[0].RentHistory);
+                    Session.Add("uCredits", uLogged[0].Credits);
+
+                    //!!!last login=datetime.now();
+
+                    //Response.Redirect("Browse.aspx", false);
+                    Response.Redirect("UserAccount.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();            
                 }
                 else
                 {
-                    lblErrors.Text = "Email and password do not match";
-                    lblErrors.Visible = true;
+                    lblLoginErrors.Text = "Email and password do not match";
+                    lblLoginErrors.Visible = true;
                 }
             }
             catch(Exception ex)

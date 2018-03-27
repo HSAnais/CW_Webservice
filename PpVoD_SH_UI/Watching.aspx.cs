@@ -27,10 +27,15 @@ namespace PpVoD_SH_UI
             lblPlot.Text = (string)Session["wPlot"];
 
             //!!!add +1 in Videos table for number of views
+            
+            //temporary hardcoded data
+            List<int> lst = new List<int> { 5, 7, 8, 17 };
+            Session["uHistory"] = lst;
 
             //add the videoid in rentHistory
             List<int> updatedHistory = (List<int>)Session["uHistory"];
-            updatedHistory.Add(Convert.ToInt32(Session["wId"]));
+            int currentID = Convert.ToInt32(Session["wId"]);
+            updatedHistory.Add(currentID);
             Session["uHistory"] = updatedHistory;
 
             //finish viewing message

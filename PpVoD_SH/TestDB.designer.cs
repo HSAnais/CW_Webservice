@@ -30,12 +30,12 @@ namespace PpVoD_SH
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertVideo(Video instance);
-    partial void UpdateVideo(Video instance);
-    partial void DeleteVideo(Video instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertVideo(Video instance);
+    partial void UpdateVideo(Video instance);
+    partial void DeleteVideo(Video instance);
     #endregion
 		
 		public TestDBDataContext() : 
@@ -68,6 +68,14 @@ namespace PpVoD_SH
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Video> Videos
 		{
 			get
@@ -75,12 +83,234 @@ namespace PpVoD_SH
 				return this.GetTable<Video>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<User> Users
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Full_name;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		private System.Nullable<System.DateTime> _LastLogin;
+		
+		private string _RentHistory;
+		
+		private System.Nullable<int> _Credits;
+		
+		private string _Creditcard;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnFull_nameChanging(string value);
+    partial void OnFull_nameChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnLastLoginChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastLoginChanged();
+    partial void OnRentHistoryChanging(string value);
+    partial void OnRentHistoryChanged();
+    partial void OnCreditsChanging(System.Nullable<int> value);
+    partial void OnCreditsChanged();
+    partial void OnCreditcardChanging(string value);
+    partial void OnCreditcardChanged();
+    #endregion
+		
+		public User()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
 		{
 			get
 			{
-				return this.GetTable<User>();
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Full name]", Storage="_Full_name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Full_name
+		{
+			get
+			{
+				return this._Full_name;
+			}
+			set
+			{
+				if ((this._Full_name != value))
+				{
+					this.OnFull_nameChanging(value);
+					this.SendPropertyChanging();
+					this._Full_name = value;
+					this.SendPropertyChanged("Full_name");
+					this.OnFull_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastLogin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastLogin
+		{
+			get
+			{
+				return this._LastLogin;
+			}
+			set
+			{
+				if ((this._LastLogin != value))
+				{
+					this.OnLastLoginChanging(value);
+					this.SendPropertyChanging();
+					this._LastLogin = value;
+					this.SendPropertyChanged("LastLogin");
+					this.OnLastLoginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RentHistory", DbType="NVarChar(MAX)")]
+		public string RentHistory
+		{
+			get
+			{
+				return this._RentHistory;
+			}
+			set
+			{
+				if ((this._RentHistory != value))
+				{
+					this.OnRentHistoryChanging(value);
+					this.SendPropertyChanging();
+					this._RentHistory = value;
+					this.SendPropertyChanged("RentHistory");
+					this.OnRentHistoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Credits", DbType="Int")]
+		public System.Nullable<int> Credits
+		{
+			get
+			{
+				return this._Credits;
+			}
+			set
+			{
+				if ((this._Credits != value))
+				{
+					this.OnCreditsChanging(value);
+					this.SendPropertyChanging();
+					this._Credits = value;
+					this.SendPropertyChanged("Credits");
+					this.OnCreditsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Creditcard", DbType="NVarChar(MAX)")]
+		public string Creditcard
+		{
+			get
+			{
+				return this._Creditcard;
+			}
+			set
+			{
+				if ((this._Creditcard != value))
+				{
+					this.OnCreditcardChanging(value);
+					this.SendPropertyChanging();
+					this._Creditcard = value;
+					this.SendPropertyChanged("Creditcard");
+					this.OnCreditcardChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -107,6 +337,8 @@ namespace PpVoD_SH
 		
 		private System.Data.Linq.Binary _Poster;
 		
+		private System.Nullable<int> _Viewings;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -127,6 +359,8 @@ namespace PpVoD_SH
     partial void OnYearChanged();
     partial void OnPosterChanging(System.Data.Linq.Binary value);
     partial void OnPosterChanged();
+    partial void OnViewingsChanging(System.Nullable<int> value);
+    partial void OnViewingsChanged();
     #endregion
 		
 		public Video()
@@ -294,184 +528,22 @@ namespace PpVoD_SH
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Full_name;
-		
-		private string _Email;
-		
-		private string _Password;
-		
-		private System.Nullable<System.DateTime> _LastLogin;
-		
-		private string _RentHistory;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnFull_nameChanging(string value);
-    partial void OnFull_nameChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnLastLoginChanging(System.Nullable<System.DateTime> value);
-    partial void OnLastLoginChanged();
-    partial void OnRentHistoryChanging(string value);
-    partial void OnRentHistoryChanged();
-    #endregion
-		
-		public User()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Viewings", DbType="Int")]
+		public System.Nullable<int> Viewings
 		{
 			get
 			{
-				return this._Id;
+				return this._Viewings;
 			}
 			set
 			{
-				if ((this._Id != value))
+				if ((this._Viewings != value))
 				{
-					this.OnIdChanging(value);
+					this.OnViewingsChanging(value);
 					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Full name]", Storage="_Full_name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Full_name
-		{
-			get
-			{
-				return this._Full_name;
-			}
-			set
-			{
-				if ((this._Full_name != value))
-				{
-					this.OnFull_nameChanging(value);
-					this.SendPropertyChanging();
-					this._Full_name = value;
-					this.SendPropertyChanged("Full_name");
-					this.OnFull_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastLogin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> LastLogin
-		{
-			get
-			{
-				return this._LastLogin;
-			}
-			set
-			{
-				if ((this._LastLogin != value))
-				{
-					this.OnLastLoginChanging(value);
-					this.SendPropertyChanging();
-					this._LastLogin = value;
-					this.SendPropertyChanged("LastLogin");
-					this.OnLastLoginChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RentHistory", DbType="NVarChar(50)")]
-		public string RentHistory
-		{
-			get
-			{
-				return this._RentHistory;
-			}
-			set
-			{
-				if ((this._RentHistory != value))
-				{
-					this.OnRentHistoryChanging(value);
-					this.SendPropertyChanging();
-					this._RentHistory = value;
-					this.SendPropertyChanged("RentHistory");
-					this.OnRentHistoryChanged();
+					this._Viewings = value;
+					this.SendPropertyChanged("Viewings");
+					this.OnViewingsChanged();
 				}
 			}
 		}

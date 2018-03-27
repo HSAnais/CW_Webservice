@@ -12,8 +12,9 @@ namespace PpVoD_SH_UI
         protected void Page_Load(object sender, EventArgs e)
         {
             ////temporary hardcoded data to test navbar, renthistory
-            Session["uName"] = "anais@anais.anais";
-            Session["uCredits"] = 10;
+            //Session["uName"] = "Anais";
+            //Session["uCredits"] = 10;
+            //Session["uEmail"] = "anais@anais.anais";
 
             //navbar logged in
             if (Session["uName"] != null)//logged in
@@ -39,23 +40,23 @@ namespace PpVoD_SH_UI
             }
         }
 
-        protected async void BtnGetVideobyNumber_Click(object sender, EventArgs e)
-        {
-            int inputID = Convert.ToInt32(tbxVideoNumber.Text);
-            List<Models.VideoElement> vResult = await new Models.VideoElement().GetVideoByIDAsync(inputID);
+        //protected async void BtnGetVideobyNumber_Click(object sender, EventArgs e)
+        //{
+        //    int inputID = Convert.ToInt32(tbxVideoNumber.Text);
+        //    List<Models.VideoElement> vResult = await new Models.VideoElement().GetVideoByIDAsync(inputID);
 
-            ltlResult.Text = "Name: " + vResult[0].Title + "  ID: " + vResult[0].ID + "  Price: " + vResult[0].Price + "  Genre: " + vResult[0].Genre;
-        }
+        //    ltlResult.Text = "Name: " + vResult[0].Title + "  ID: " + vResult[0].ID + "  Price: " + vResult[0].Price + "  Genre: " + vResult[0].Genre;
+        //}
 
-        protected async void BtnAllVideos_Click(object sender, EventArgs e)
-        {
-            List<Models.VideoElement> vList = await new Models.VideoElement().GetVideosAsync();
+        //protected async void BtnAllVideos_Click(object sender, EventArgs e)
+        //{
+        //    List<Models.VideoElement> vList = await new Models.VideoElement().GetVideosAsync();
 
-            foreach (Models.VideoElement v in vList)
-            {
-                ltlAllResults.Text = ltlAllResults.Text + "Name: " + v.Title + "  ID: " + v.ID + "  Price: " + v.Price + "  Genre: " + v.Genre + "<br/>";
-            }
-        }
+        //    foreach (Models.VideoElement v in vList)
+        //    {
+        //        ltlAllResults.Text = ltlAllResults.Text + "Name: " + v.Title + "  ID: " + v.ID + "  Price: " + v.Price + "  Genre: " + v.Genre + "<br/>";
+        //    }
+        //}
 
         /* display carousel trending
          */
